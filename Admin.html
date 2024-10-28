@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Form and Candidates</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+
+<body>
+
+    <div class="userProfile-logout">
+        <h1 class="name">Hello <br> <span class="adminName"></span> 👋</h1>
+
+        <button onclick="handleLogout()" class="logout">Log Out</button>
+    </div>
+
+    <div class="wrapper">
+        <!-- Task Form Section -->
+        <div class="container">
+            <!-- Left side (Title, Date, Assign To, Category) -->
+            <div class="form-left">
+                <label for="title">Task Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter task title" required>
+
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="assignTo">Assign To</label>
+                <input type="text" id="assignTo" name="assignTo" placeholder="Assign to" required>
+
+                <label for="category">Category</label>
+                <select id="category" name="category" required>
+                    <option value="" disabled selected>Select a Team</option>
+                    <option value="Development">Development</option>
+                    <option value="Design">Design</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Web Development">Web Development</option>
+                </select>
+            </div>
+
+            <!-- Right side (Description) -->
+            <div class="form-right">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" placeholder="Enter task description" required></textarea>
+
+                <button onclick="getTaskInput()" type="submit" class="btn">Create Task</button>
+            </div>
+        </div>
+
+        <!-- Candidate Section -->
+        <div class="candidate-section">
+            <div class="candidate-header">
+                <span>Employee Name</span>
+                <span>New Task</span>
+                <span>Active Task</span>
+                <span>Completed</span>
+                <span>Not completed</span>
+            </div>
+            <div class="candidate-list-parent">
+                <ul class="candidate-list">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        // Retrieve the admin's name from localStorage
+        const adminNameData = JSON.parse(localStorage.getItem('adminname'));
+        document.querySelector(".adminName").textContent = adminNameData || "Guest";
+
+    </script>
+
+    <script src="data/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

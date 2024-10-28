@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Form and Candidates</title>
+    <link rel="stylesheet" href="assets/css/employee.css">
+</head>
+<body>
+
+    <div class="userProfile-logout">
+        <h1 class="name">Hello <br> <span class="employeeName">Shivam kumar</span> 👋</h1>
+
+        <button onclick="handleLogout()" class="logout">Log Out</button>
+    </div>
+
+    <div class="task-cards">
+        <!-- New Task Card -->
+        <div class="task-card new-task">
+            <div class="blur-background blur-background1"></div>
+            <div class="task-icon">🆕</div>
+            <div class="task-details">
+                <h3>New Task</h3>
+            </div>
+            <div class="task-info">
+                <h3><span class="count">0</span>New tasks</h3>
+            </div>
+        </div>
+    
+        <!-- Completed Task Card -->
+        <div class="task-card completed-task">
+            <div class="blur-background blur-background2"></div>
+            <div class="task-icon">🏆</div>
+            <div class="task-details">
+                <h3>Completed Task</h3>
+            </div>
+            <div class="task-info">
+                <h3 class="Completed"><span class="count completedCount">0</span>Completed tasks</h3>
+            </div>
+        </div>
+    
+        <!-- Accepted Task Card -->
+        <div class="task-card accepted-task">
+            <div class="blur-background blur-background3"></div>
+            <div class="task-icon">⏳</div>
+            <div class="task-details">
+                <h3>Accepted Task</h3>
+            </div>
+            <div class="task-info">
+                <h3><span class="count acceptedCount">0</span>accepted tasks</h3>
+            </div>
+        </div>
+    
+        <!-- Not Completed Task Card -->
+        <div class="task-card not-completed-task">
+            <div class="blur-background blur-background4"></div>
+            <div class="task-icon">👍</div>
+            <div class="task-details">
+                <h3>Not Completed Task</h3>
+            </div>
+            <div class="task-info">
+                <h3 class="not-completed"><span class="count not-completedbtn">0</span>Not Completed</h3>
+            </div>
+        </div>
+    </div>
+    
+
+<section class="task-cardSection">
+    <h1>Current Tasks</h1>
+
+  <div class="taskCardContainer">
+    <p style="display: none;" class="none">There Is no Task Right Now</p>
+  </div>
+</section>
+   
+
+    <script>
+         const EmployeeNameData = JSON.parse(localStorage.getItem('employeeName'));
+         document.querySelector(".employeeName").textContent = EmployeeNameData || "Guest";
+    </script>
+    <script src="data/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
